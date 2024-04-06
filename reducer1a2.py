@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# --*-- coding:utf-8 --*--
 import sys
 
 top_n = 5
