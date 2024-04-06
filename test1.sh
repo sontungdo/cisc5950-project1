@@ -1,5 +1,7 @@
 #!/bin/sh
 
+input_file=$1
+
 # Start and clean up
 ../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /project1/input/
@@ -7,7 +9,7 @@
 
 # Input preparation
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /project1/input/
-/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../data/rows_small.csv /project1/input/
+/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../data/$input_file /project1/input/
 
 # Question 1a
 # MapReduce Round 1
