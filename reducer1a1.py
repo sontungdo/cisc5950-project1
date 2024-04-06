@@ -11,7 +11,7 @@ for line in sys.stdin:
         current_count += count
     else:
         if current_hour:  # Not the first hour
-            print(current_hour, current_count, sep='\t')
+            print('%s\t%s' % (current_hour, current_count))
         current_hour = hour
         current_count = count
 
