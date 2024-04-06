@@ -17,4 +17,4 @@ for line in sys.stdin:
 
 # Output the last hour
 if current_hour: 
-    print(current_hour, current_count, sep='\t')
+    print('%s\t%s' % (current_hour, current_count))

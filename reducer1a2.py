@@ -14,4 +14,4 @@ for line in sys.stdin:
 
 # Output results
 for count, hour in current_top_n:
-    print(hour, count, sep='\t')
+    print('%s\t%s' % (hour, count))

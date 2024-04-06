@@ -12,4 +12,4 @@ for line in sys.stdin:
     violation_time = fields[19]
 
     hour = violation_time[0:2] + violation_time[4] # get hour, remove minute
-    print(hour, 1, sep='\t')  # Use tab as delimiter
+    print('%s\t1' % (hour))  # Use tab as delimiter
