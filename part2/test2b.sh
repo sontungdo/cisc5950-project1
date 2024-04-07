@@ -5,7 +5,7 @@ num_iter=$2
 # Populate random centroids
 cat ../../data/nba_small.csv | python generate_centroids.py 
 # Start and clean up
-../start.sh
+../../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /project1/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /project1/output/
 
@@ -29,9 +29,8 @@ do
 done
 # Output and clean up output
 /usr/local/hadoop/bin/hdfs dfs -cat /project1/output/part-00000
-/usr/local/hadoop/bin/hdfs dfs -rm -r /project1/tmp/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /project1/output/
 
 # Clean up and stop
 /usr/local/hadoop/bin/hdfs dfs -rm -r /project1/input/ 
-../stop.sh
+../../stop.sh
