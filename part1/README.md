@@ -6,6 +6,7 @@ The system aims to efficiently analyze a large dataset of parking violations in 
 -	Reducer 1 round 1: Accumulate the count for every feature and output (feature, count)
 -	Mapper 1 round 2: Reverse the output into (count, feature)
 -	Reducer 1 round 2: Maintain a list of top 5 counts and process each line. Each line with count big enough for top 5 would push the current top 5 out of the list. At the end, output 5 pairs of (hour, count) with the 5 biggest counts. I choose to output top 5 instead of just top 1.
+---
 Only mapper 1 round 1 is required to have different versions for each question, while all other mappers and reducers can be shared between every case. Some specific changes are required in mapper 1 round 1 to process different kinds of data:
 (My MapReduce keeps getting error on the full dataset, so I can only run them on a subset with the first 1000 rows of the original data)
 -	Question a: mapper reads column index 19 to get violation time, then remove minute to get only the hour.
