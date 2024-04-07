@@ -1,0 +1,1 @@
+cat ../../data/nba_small.csv | python generate_centroids.py             
