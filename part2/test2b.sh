@@ -11,7 +11,7 @@ cat ../../data/nba_small.csv | python generate_centroids.py
 
 # Input preparation
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /project1/input/
-/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../data/$input_file /project1/input/
+/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../../data/$input_file /project1/input/
 
 # Question 2b
 for i in {1..$2}; 
