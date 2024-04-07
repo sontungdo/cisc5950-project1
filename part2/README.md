@@ -9,3 +9,7 @@ Question 2a: measure hit_rate of a player A when facing player B. A lower hit_ra
 
 ---
 Run test2b.sh for second part
+This part couldn't work on Hadoop. I only managed to run it for 1 iteration locally
+-	Mapper 2b: Read inputs at specified columns to get player names and the 3 measures needed for the matrix, load existing 4 centroids, find the nearest centroids for each matrix, then output (player_name, centroid_id, matrix)
+-	Reducer 2b: Accumulate results from mapper, train the K-means clustering model by moving the centroids to the center of their regions, and output the new 4 centroids.
+Additionally, before the mapper-reducer loop can be run, I have a script random_centroid.sh that can populate centroids.txt with 4 random centroids with reasonable random values (within range for each feature). This feature is already included at the start of test2b.sh script when run in a Hadoop cluster.
