@@ -18,14 +18,14 @@ for i in {1..$2};
 do
     /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar  \
         -input /project1/input/ \
-        -output /project1/output/iteration_$i \
+        -output /project1/output \
         -mapper mapper2b.py \
         -reducer reducer2b.py \
         -file mapper2b.py \
         -file reducer2b.py \
         -file centroids.txt 
     # Update centroids for next iteration
-    mv /project1/output/iteration_$i/part-00000 centroids.txt 
+    mv /project1/output/part-00000 centroids.txt 
 done
 # Output and clean up output
 /usr/local/hadoop/bin/hdfs dfs -cat /project1/output/part-00000
