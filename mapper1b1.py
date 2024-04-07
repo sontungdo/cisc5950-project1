@@ -11,10 +11,11 @@ for line in sys.stdin:
         continue
     
     fields = line.strip().split(',')
-    violation_time = fields[19]
+    vehicle_type = fields[6]
+    vehicle_year = fields[35]
     # Filter out all missing values
-    if violation_time == '':
+    if vehicle_type == '' or vehicle_year == '' or vehicle_year == '0':
         continue
-    hour = violation_time[0:2] + violation_time[4] # get hour, remove minute
+    feature = vehicle_type + ' ' + vehicle_year 
 
-    print('%s\t1' % (hour))  # Use tab as delimiter
+    print('%s\t1' % (feature))  # Use tab as delimiter

@@ -11,10 +11,9 @@ for line in sys.stdin:
         continue
     
     fields = line.strip().split(',')
-    violation_time = fields[19]
+    vehicle_color = fields[33]
     # Filter out all missing values
-    if violation_time == '':
+    if vehicle_color == '':
         continue
-    hour = violation_time[0:2] + violation_time[4] # get hour, remove minute
 
-    print('%s\t1' % (hour))  # Use tab as delimiter
+    print('%s\t1' % (vehicle_color))  # Use tab as delimiter

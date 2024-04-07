@@ -11,10 +11,9 @@ for line in sys.stdin:
         continue
     
     fields = line.strip().split(',')
-    violation_time = fields[19]
+    violation_precinct = fields[14]
     # Filter out all missing values
-    if violation_time == '':
+    if violation_precinct == '':
         continue
-    hour = violation_time[0:2] + violation_time[4] # get hour, remove minute
 
-    print('%s\t1' % (hour))  # Use tab as delimiter
+    print('%s\t1' % (violation_precinct))  # Use tab as delimiter
