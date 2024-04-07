@@ -1,5 +1,5 @@
 # Project 1 for CISC5950 Big Data course 
-Implement MapReduce in HDFS
+Implement MapReduce in HDFS. This repo should be located inside /mapreduce-test, with data located at /mapreduce-test/data
 
 ## Part 1: NY Parking Violations
 The NYC Department of Finance collects data on every parking ticket issued in NYC ( 10M
