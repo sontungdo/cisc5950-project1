@@ -18,4 +18,4 @@ for line in sys.stdin:
 for cluster_id, vector_sum in cluster_sums.items():
     count = cluster_counts[cluster_id]
     new_centroid = tuple(x / count for x in vector_sum)
-    print('%s\t%s' % (cluster_id, ','.join(map(str, new_centroid)))) 
+    print('%s' % (','.join(map(str, new_centroid)))) 
