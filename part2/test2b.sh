@@ -18,7 +18,7 @@ for i in {1..$2};
 do
     /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar  \
         -input /project1/input/ \
-        -output /project1/output \
+        -output /project1/output/ \
         -mapper mapper2b.py \
         -reducer reducer2b.py \
         -file mapper2b.py \
